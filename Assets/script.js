@@ -1,5 +1,6 @@
 // each question and answer set as its own object
 var question1 = {
+    questionNumber: "1 of 5",
     question: "Question 1 placeholder",
     optionA: "Option A",
     optionB: "Option B",
@@ -8,6 +9,7 @@ var question1 = {
 }
 
 var question2 = {
+    questionNumber: "2 of 5",
     question: "Question 2 placeholder",
     optionA: "Option A",
     optionB: "Option B",
@@ -16,6 +18,7 @@ var question2 = {
 }
 
 var question3 = {
+    questionNumber: "3 of 5",
     question: "Question 3 placeholder",
     optionA: "Option A",
     optionB: "Option B",
@@ -24,6 +27,7 @@ var question3 = {
 }
 
 var question4 = {
+    questionNumber: "4 of 5",
     question: "Question 4 placeholder",
     optionA: "Option A",
     optionB: "Option B",
@@ -32,6 +36,7 @@ var question4 = {
 }
 
 var question5 = {
+    questionNumber: "5 of 5",
     question: "Question 5 placeholder",
     optionA: "Option A",
     optionB: "Option B",
