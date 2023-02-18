@@ -58,11 +58,10 @@ startButton.addEventListener("click", function() {
     }, 1000)
 })
 
-
 // question box display toggle
 questionBox.style.display = "none";
 
-
+// quiz start event listener
 startButton.addEventListener("click", function() {
     questionBox.style.display = "block";
     infoBox.style.display = "none";
@@ -70,111 +69,30 @@ startButton.addEventListener("click", function() {
     displayQAndA();
 })
 
-
+// generate questions, auto progress when answered
 var questionCounter = 0;
 
-function displayQAndA (){
+function displayQAndA() {
+    questionBox.innerHTML = ` <div class = "optionSet"></div>`;
     var questionElement = document.createElement('h2');
     questionElement.textContent = questionList[questionCounter].question;
     questionBox.appendChild(questionElement);
-    for (var i = 0; i < questionList.options.length; questionCounter++) {
+    for (var i = 0; i < questionList[questionCounter].options.length; i++) {
         var optionButton = document.createElement('button');
-        var optionSet = document.querySelector(".optionSet");
-        optionButton.textContent = questionList.options[i];
+        var optionSet = document.querySelector('.optionSet');
+        optionButton.textContent = questionList[questionCounter].options[i];
         optionSet.appendChild(optionButton);
+        optionButton.addEventListener('click', function (event) {
+            if (event.target.textContent === questionList[questionCounter].answer) {
+                console.log('correct');
+                questionCounter++;
+                displayQAndA();
+            } else {
+                console.log('incorrect');
+                questionCounter++;
+                displayQAndA();
+            }
+        });
     }
-    optionButton.addEventListener("click", function(event) {
-        if(event.target.textContent === questionList[questionCounter].answer){
-        console.log(optionButton)} 
-        displayQAndA();
-        questionCounter + 1;
-    } 
-    )
-} 
+}
 
-// for (var i = 0; i < questionList.length; i++) {
-//     questionElement.textContent = questionList[i].question;
-//     questionBox.appendChild(questionElement);
-//     for (var k = 0; k < questionList[k].options[k]; k++) {
-//         optionButton.textContent = questionList[k].options[k];
-//         optionSet.appendChild(optionButton[k]);
-//     }
-//     optionButton.addEventListener("click", function (event) {
-//         for(var j = 0; j < questionList.options.length; j++) {
-//             if(event.target.textContent === questionList[j].answer){
-//                 questionCounter + 1;
-//             }
-//         }
-//     })
-// }
-
-// var optionA = questionList[i].optionA;
-// var optionB = questionList[i].optionB;
-// var optionC = questionList[i].optionC;
-// var optionD = questionList[i].optionD;
-// var question = questionList[i].question;
-// var optionSet = questionList[i].options[i];
-
-// console.log(questionList[0].options[0])
-
-// optionButton.textContent = optionA;
-// optionButton.textContent = optionB;
-// optionButton.textContent = optionC;
-// optionButton.textContent = optionD;
-
-// var optionBElement = document.createElement('button')
-// var optionCElement = document.createElement('button')
-// var optionDElement = document.createElement('button')
-
-// questionElement.textContent = questionList[0].question;
-// optionButton.textContent = questionList[0].optionA;
-// questionBox.appendChild(questionElement);
-// questionElement.appendChild(optionButton);
-// questionElement.appendChild(optionButton);
-
-
-// var questionNumber = document.querySelector(".questionNumber");
-// var question = document.querySelector(".class");
-// var optionA = document.querySelector("#optionA");
-// var optionB = document.querySelector("#optionB");
-// var optionC = document.querySelector("#optionC");
-// var optionD = document.querySelector("#optionD");
-// var optionButtons = document.querySelector(".questionButton")
-
-// for (var i = 0; i < questions.length; i++) {
-//     var optionButton = document.createElement('button');
-//     optionButton.textContent = questions[i].optionA;
-//     questionElement.appendChild(optionButton);
-//     optionButton.addEventListener("click", function(event){
-//         for (var j = 0; j < questions.length; j++){
-//             if(event.target.textContent ===[j].optionA;)
-//         }
-//     })
-// }
-
-// var students = [
-//     {name: 'Luis', age: 25},
-//     {name: 'Juan', age: 20},
-//     {name: 'Pedro', age: 30},
-//     {name: 'Maria', age: 28},
-//     {name: 'Jose', age: 22},
-// ]
-
-// var listElement = document.getElementsByClassName('student-list')[0];
-// var nameElement = document.getElementById('name');
-// var ageElement = document.getElementById('age');
-
-// for (var i = 0; i < students.length; i++) {
-//     var listItem = document.createElement('p');
-//     listItem.textContent = students[i].name;
-//     listElement.appendChild(listItem);
-//     listItem.addEventListener("click", function(event){
-//         for(var j = 0; j < students.length; j++){
-//            if(event.target.textContent === students[j].name){
-//             nameElement.textContent = students[j].name;
-//             ageElement.textContent = students[j].age;
-//            }
-//         }
-        
-//     })
-// }
