@@ -1,3 +1,26 @@
-/* .question-box {
-    display: none;
-} */
+:root {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h1, li {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    display: block;
+    justify-content: center;
+    color: white;
+    background-color: #664E88;
+    border-radius: 10px;
+}
+ 
+.start-button {
+    display: flex;
+    justify-content: center;
+}

@@ -28,9 +28,16 @@ var questionList = [
     question: "Question 5 placeholder",
     answer: "Option A",
     options: ["Option A", "Option B", "Option C", "Option D"]
-    }];
+    },
+    {
+    questionNumber: 6,
+    question: "",
+    answer: "",
+    options: [""]
+    },
+  ];
 
-
+var score = 0;
 
 // event listener for start button
 var startButton = document.querySelector(".start-button");
@@ -76,7 +83,7 @@ function displayQAndA() {
     questionBox.innerHTML = ` <div class = "optionSet"></div>`;
     var questionElement = document.createElement('h2');
     questionElement.textContent = questionList[questionCounter].question;
-    questionBox.appendChild(questionElement);
+    questionBox.prepend(questionElement);
     for (var i = 0; i < questionList[questionCounter].options.length; i++) {
         var optionButton = document.createElement('button');
         var optionSet = document.querySelector('.optionSet');
@@ -85,14 +92,43 @@ function displayQAndA() {
         optionButton.addEventListener('click', function (event) {
             if (event.target.textContent === questionList[questionCounter].answer) {
                 console.log('correct');
+                score+= 10;
+
+                console.log("My current score is", score)
                 questionCounter++;
                 displayQAndA();
             } else {
                 console.log('incorrect');
+                console.log('question conter', questionCounter);
+                console.log('question conter', questionCounter);
+                console.log('question length', questionList.length);
                 questionCounter++;
                 displayQAndA();
             }
+            if (questionCounter === 5) {
+                // alert("FIN.");
+                // console.log("fin");
+                clearInterval(timeRemaining) // make this work or take it off page 
+                localStorage.setItem("finalScore", score)
+                loseGame()
+            }
         });
     }
+}
+ 
+function loseGame() {
+    localStorage.setItem("finalScore",score)
+    return window.location.href= "highscores.html"
+}
+
+console.log(questionCounter)
+
+// results page
+var resultsPage = document.querySelector(".results");
+resultsPage.style.display = "none";
+
+if (questionCounter == 5) {
+    questionBox.style.display = "none";
+    resultsPage.style.display = "block";
 }
 
