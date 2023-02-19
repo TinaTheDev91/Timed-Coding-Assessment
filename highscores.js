@@ -17,32 +17,32 @@ submitButton.addEventListener("click", function() {
     
     localStorage.setItem("initials", JSON.stringify(initialSubmission));
 
-} function displayScores() {
-    highscoreList.innerHTML = `<li class = 'scores'></li>`;
-    var initials = JSON.parse(localStorage.getItem('initials'));
-    var scoreListElement = document.createElement('li');
-    var initialScore = initials + " - " + highscores; 
-    scoreListElement.textContent = initialScore;      
-    highscoreList.appendChild(scoreListElement);
+    }
+    );
+    
+    
+    // highscoreList.innerhmtl = 
+    // highscores.map(score => {
+        //     return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
+        // }).join('')
+        
+        // highscoreList.appendChild(highscores);
+        
+        
+        // highscoreList.innerHTML = localStorage.getItem("initials")
+        
+    // function displayScores() {
+        highscoreList.innerHTML = `<li class = 'scores'></li>`;
+        var initials = JSON.parse(localStorage.getItem('initials'));
+        var scoreListElement = document.createElement('li');
+        var initialScore = initials + " - " + highscores; 
+        scoreListElement.textContent = initialScore;      
+        highscoreList.appendChild(scoreListElement);
+    
+    // } displayScores();
 
-} displayScores();
 
-);
-
-
-// highscoreList.innerhmtl = 
-// highscores.map(score => {
-//     return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
-// }).join('')
-
-// highscoreList.appendChild(highscores);
-
-
-// highscoreList.innerHTML = localStorage.getItem("initials")
-
-
-
-console.log(initialScore)
+console.log(scoreListElement)
 
 
 
