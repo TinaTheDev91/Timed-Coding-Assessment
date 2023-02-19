@@ -16,12 +16,37 @@ submitButton.addEventListener("click", function() {
     console.log(initialSubmission);
     
     localStorage.setItem("initials", JSON.stringify(initialSubmission));
-});
+
+} function displayScores() {
+    highscoreList.innerHTML = `<li class = 'scores'></li>`;
+    var initials = JSON.parse(localStorage.getItem('initials'));
+    var scoreListElement = document.createElement('li');
+    var initialScore = initials + " - " + highscores; 
+    scoreListElement.textContent = initialScore;      
+    highscoreList.appendChild(scoreListElement);
+
+} displayScores();
+
+);
 
 
-highscoreList.innerhmtl = 
-highscores.map(score => {
-    return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
-}).join('')
+// highscoreList.innerhmtl = 
+// highscores.map(score => {
+//     return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
+// }).join('')
 
-highscoreList.appendChild(highscores);
+// highscoreList.appendChild(highscores);
+
+
+// highscoreList.innerHTML = localStorage.getItem("initials")
+
+
+
+console.log(initialScore)
+
+
+
+// console.log(highscoreList)
+
+
+
