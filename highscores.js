@@ -10,4 +10,14 @@ highscores.map(score => {
     return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
 }).join('')
 
+var initialInput = document.querySelector("#initials")
+var submitButton = document.querySelector(".submit")
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var initialSubmission = {
+        initials: initialInput.value.trim(),
+    };
+
 highscoreList.appendChild(highscores);
