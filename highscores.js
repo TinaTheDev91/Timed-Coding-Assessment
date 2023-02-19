@@ -24,6 +24,14 @@ submitButton.addEventListener("click", function() {
 
     }
     );
+
+var listElement = document.getElementsByTagName('li');
+localStorage.setItem("previousScore", JSON.stringify(listElement));
+var previousScores = JSON.parse(localStorage.getItem("previousScore"))
+
+console.log(previousScores)
+
+listElement.textContent = 
     
     
     // highscoreList.innerhmtl = 
