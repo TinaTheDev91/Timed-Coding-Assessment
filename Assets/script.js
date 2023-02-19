@@ -106,8 +106,6 @@ function displayQAndA() {
                 displayQAndA();
             }
             if (questionCounter === 5) {
-                // alert("FIN.");
-                // console.log("fin");
                 clearInterval(timeRemaining) // make this work or take it off page 
                 localStorage.setItem("finalScore", score)
                 loseGame()
@@ -123,12 +121,5 @@ function loseGame() {
 
 console.log(questionCounter)
 
-// results page
-var resultsPage = document.querySelector(".results");
-resultsPage.style.display = "none";
 
-if (questionCounter == 5) {
-    questionBox.style.display = "none";
-    resultsPage.style.display = "block";
-}
 
