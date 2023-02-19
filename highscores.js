@@ -2,22 +2,25 @@
 // localStorage.getItem
 
 
-var highscoreList = document.querySelector(".high-score-list") //something on html
-var highscores = Json.parse(localStorage.getItem('finalScore')) || []
+var highscoreList = document.querySelector(".high-score-list"); //something on html
+var highscores = JSON.parse(localStorage.getItem('finalScore'));
 
-highscoreList.innterhmtl = 
-highscores.map(score => {
-    return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
-}).join('')
+var initialInput = document.querySelector("#initials");
+var submitButton = document.querySelector(".submit");
 
-var initialInput = document.querySelector("#initials")
-var submitButton = document.querySelector(".submit")
-
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-
+submitButton.addEventListener("click", function() {
+  
     var initialSubmission = {
         initials: initialInput.value.trim(),
     };
+    console.log(initialSubmission);
+    
+    localStorage.setItem("initials", JSON.stringify(initialSubmission));
+});
 
-highscoreList.appendChild(highscores);
+// highscoreList.appendChild(highscores);
+
+// highscoreList.innerhmtl = 
+// highscores.map(score => {
+//     return `<li class = 'scores'> ${score.name} - ${score.score}</li>`
+// }).join('')
