@@ -7,6 +7,10 @@ header {
     justify-content: center;
 }
 
+ul {
+    list-style-type: none;
+}
+
 h1, li {
     display: flex;
     justify-content: center;
@@ -20,7 +24,8 @@ button {
     border-radius: 10px;
 }
  
-.start-button {
+.start {
     display: flex;
     justify-content: center;
 }
+

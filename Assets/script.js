@@ -1,33 +1,53 @@
 var questionList = [
     {
     questionNumber: 1,
-    question: "Question 1 placeholder",
-    answer: "Option A",
-    options: ["Option A", "Option B", "Option C", "Option D"]
+    question: "What does || mean?",
+    answer: "C) OR",
+    options: 
+    ["A) AND",
+     "B) ABSOLUTE VALUE",
+     "C) OR", 
+     "D) ELSE"]
     },
     {
     questionNumber: 2,
-    question: "Question 2 placeholder",
-    answer: "Option A",
-    options: ["Option A", "Option B", "Option C", "Option D"]
+    question: "What tools do you use to make a website responsive?",
+    answer: "D) BOTH A AND B",
+    options: 
+    ["A) FLEX BOX", 
+     "B) MEDIA QUERIES", 
+     "C) RESETS", 
+     "D) BOTH A AND B"]
     },
     {
     questionNumber: 3,
-    question: "Question 3 placeholder",
-    answer: "Option A",
-    options: ["Option A", "Option B", "Option C", "Option D"]
+    question: "What JavaScript property is used to add information to the user's local storage?",
+    answer: "setItem",
+    options: 
+    ["storeItem",
+     "saveItem",
+     "keepItem",
+     "setItem"]
     },
     {
     questionNumber: 4,
-    question: "Question 4 placeholder",
-    answer: "Option A",
-    options: ["Option A", "Option B", "Option C", "Option D"]
+    question: "What platform is most commonly used for storing, accessing and sharing code?",
+    answer: "GitHub",
+    options: 
+    ["GitLab",
+     "GitHub",
+     "GitStorage",
+     "GitHome"]
     },
     {
     questionNumber: 5,
-    question: "Question 5 placeholder",
-    answer: "Option A",
-    options: ["Option A", "Option B", "Option C", "Option D"]
+    question: "Which of the following IS NOT a method of retrieving HTML elements in JavaScript?",
+    answer: "grabHtmlByTag",
+    options: 
+    ["querySelector",
+     "getElementById",
+     "grabHtmlByTag",
+     "getElementByClass"]
     },
     {
     questionNumber: 6,
@@ -99,27 +119,20 @@ function displayQAndA() {
                 displayQAndA();
             } else {
                 console.log('incorrect');
-                console.log('question conter', questionCounter);
-                console.log('question conter', questionCounter);
-                console.log('question length', questionList.length);
                 questionCounter++;
                 displayQAndA();
             }
             if (questionCounter === 5) {
-                clearInterval(timeRemaining) // make this work or take it off page 
                 localStorage.setItem("finalScore", score)
                 loseGame()
             }
         });
     }
 }
- 
+
+
+// move to score page 
 function loseGame() {
     localStorage.setItem("finalScore",score)
     return window.location.href= "highscores.html"
 }
-
-console.log(questionCounter)
-
-
-

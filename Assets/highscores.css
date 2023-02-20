@@ -1,0 +1,9 @@
+:root {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+    color: white;
+    background-color: #664E88;
+    border-radius: 10px;
+}
